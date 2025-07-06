@@ -1,2 +1,4 @@
 git+https://github.com/modelcontextprotocol/python-sdk.git
-
+numpy
+sentence-transformers
+faiss-cpu

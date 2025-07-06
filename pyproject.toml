@@ -3,8 +3,6 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "similarity-suggest-taro"
+name = "suggest-similarity-diff"
 version = "0.0.1"
-dependencies = [
-    "modelcontextprotocol @ git+https://github.com/modelcontextprotocol/python-sdk.git"
-]
+
