@@ -22,6 +22,7 @@ def vectorize_md(force: bool = False) -> Dict:
     Markdownドキュメントを再帰的に探索し、日本語チャンクに分割して埋め込みを生成する。
     """
     repo_dir_path = "/app/repo"
+    data_dir_path = "/app/data"
 
     embed_model_name = os.environ.get("EMBED_MODEL_NAME")
     if embed_model_name is None:
@@ -31,7 +32,7 @@ def vectorize_md(force: bool = False) -> Dict:
     md_files = _find_markdown_files(repo_dir_path)
     processed_files = []
     chunks = []
-    embed_output = "embeddings.jsonl"
+    embed_output = os.path.join(data_dir_path, "embeddings.jsonl")
     hash_db_path = embed_output + ".hashes.json"
     file_hashes = _load_hash_db(hash_db_path)
     model = SentenceTransformer(embed_model_name)

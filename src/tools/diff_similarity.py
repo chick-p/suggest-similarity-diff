@@ -33,7 +33,9 @@ def diff_similarity() -> Dict:
     allow_self = os.environ.get("ALLOW_SELF_MATCH", "false").lower() == "true"
     model = SentenceTransformer(embed_model_name)
 
-    vectors = _load_vectors("/app/embeddings.jsonl")
+    data_dir_path = "/app/data"
+    vectors_file_path = os.path.join(data_dir_path, "embeddings.jsonl")
+    vectors = _load_vectors(vectors_file_path)
     results = []
     use_faiss = _faiss_available and os.environ.get("USE_FAISS", "false").lower() == "true"
 
