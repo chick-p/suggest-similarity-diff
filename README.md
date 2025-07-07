@@ -41,6 +41,8 @@ This tool processes Git diffs, computes embeddings for the changes, and compares
         "--rm",
         "-v",
         "/path/to/my-blog:/app/repo",
+        "-v",
+        "/path/to/my-data:/app/data",
         "mcp/suggest-similarity-diff"
       ]
     }
